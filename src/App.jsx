@@ -1,20 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-
- const  About=()=>{
-    return <div>about</div>
-}
-const Header=()=>{
-    return <div>header</div>
-}
-
- const Home=()=>{
-    return<div>home</div>
-}
-
- const  Profile=()=>{
-    return<div>Profile</div>
-}
+import {Header} from "./components/header";
+import {Home} from "./components/home";
+import {Profile} from "./components/profile";
+import {About} from "./components/about";
 
 function App() {
   return (

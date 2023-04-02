@@ -1,11 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
         filename: 'bundle.js',
         path: path.join(__dirname, 'public')
     },
+    resolve: {
+        extensions: ['.js','.jsx']
+    },
+    devtool: "eval-source-map" ,  // to have reference to the source map
     module: {
         rules: [
             {
@@ -17,6 +21,10 @@ module.exports = {
                 test: /\.s?css$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
+            {
+                test: /\.(jpg|jpeg|png|svg)$/,
+                loader: "file-loader",
+            }
         ]
     },
     plugins: [
