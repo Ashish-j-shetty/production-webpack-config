@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const TerserPlugin = require("terser-webpack-plugin");
+
 require("dotenv").config({
   path: "./.env.prod",
 });
@@ -11,7 +13,7 @@ require("dotenv").config({
 module.exports = {
   entry: "./src/index.jsx",
   output: {
-    filename: "bundle.[hash].js",
+    filename: "[name].[contenthash].js",
     path: path.join(__dirname, "build"),
     clean: true,
   },
@@ -64,10 +66,19 @@ module.exports = {
 
   //to compress the files
   optimization: {
+    minimize: true,
     minimizer: [
       // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
       // `...`,
       new CssMinimizerPlugin(),
+      new TerserPlugin({
+        exclude: /node_modules/,
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+      }),
     ],
   },
 };

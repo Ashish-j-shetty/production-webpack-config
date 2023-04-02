@@ -1,8 +1,18 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Form, Route, Routes } from "react-router-dom";
 import { Header } from "./components/header";
 import { Home } from "./components/home";
-import { Profile } from "./components/profile";
-import { About } from "./components/about";
+
+const About = React.lazy(() =>
+  import("./components/about/index").then((module) => ({
+    default: module.About, // this method or use babel plugin babel-plugin-syntax-dynamic-import to import named exports
+  }))
+);
+const Profile = React.lazy(() =>
+  import("./components/profile").then((module) => ({
+    default: module.Profile, // this method or use babel plugin babel-plugin-syntax-dynamic-import to import named exports
+  }))
+);
 
 function App() {
   console.log(process.env.REACT_APP_API_KEY);
@@ -12,11 +22,13 @@ function App() {
       <BrowserRouter>
         <Header />
         <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+          <React.Suspense fallback={<div>loadign</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </React.Suspense>
         </div>
       </BrowserRouter>
     </div>
