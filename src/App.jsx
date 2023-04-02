@@ -5,6 +5,7 @@ import { Profile } from "./components/profile";
 import { About } from "./components/about";
 
 function App() {
+  console.log(process.env.REACT_APP_API_KEY);
   return (
     <div>
       <h1>Welcome to React</h1>

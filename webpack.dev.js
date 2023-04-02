@@ -1,12 +1,14 @@
 const path = require("path");
 const webpack = require("webpack");
-require("dotenv").config();
+require("dotenv").config({
+  path: "./.env.dev",
+});
 
 module.exports = {
   entry: "./src/index.jsx",
   output: {
     filename: "bundle.js",
-    path: path.join(__dirname, "public"),
+    path: path.join(__dirname, "build"),
   },
   resolve: {
     extensions: [".js", ".jsx"],
@@ -28,7 +30,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(jpg|jpeg|png|svg)$/,
+        test: /\.(jpg|jpeg|png|svg|webp)$/,
         loader: "file-loader",
       },
     ],

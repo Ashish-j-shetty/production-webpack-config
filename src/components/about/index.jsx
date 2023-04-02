@@ -1,4 +1,4 @@
-import IcyMountain from "images/icyMountain.jpg";
+import IcyMountain from "images/icyMountain.webp";
 
 export const About = () => {
   return (

@@ -1,4 +1,4 @@
-import Laptop from "images/laptop.jpg";
+import Laptop from "images/laptop.webp";
 
 export const Home = () => {
   return (

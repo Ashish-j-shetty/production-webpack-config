@@ -1,4 +1,4 @@
-import ClayBank from "images/claybanks.jpg";
+import ClayBank from "images/claybanks.webp";
 
 export const Profile = () => {
   return (
