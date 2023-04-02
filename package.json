@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-build": "webpack--config webpack.dev.js",
+    "dev-build": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js && yarn post-build",
     "post-build": "cp public/_redirects build",
     "start": "webpack serve --config webpack.dev.js"
