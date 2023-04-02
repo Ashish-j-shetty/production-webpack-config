@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {Header} from "./components/header";
-import {Home} from "./components/home";
-import {Profile} from "./components/profile";
-import {About} from "./components/about";
+import { Header } from "./components/header";
+import { Home } from "./components/home";
+import { Profile } from "./components/profile";
+import { About } from "./components/about";
 
 function App() {
   return (
