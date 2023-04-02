@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 require("dotenv").config({
   path: "./.env.dev",
 });
@@ -44,6 +45,7 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": JSON.stringify(process.env),
     }),
+    new BundleAnalyzerPlugin(),
   ],
   mode: "development",
   devServer: {

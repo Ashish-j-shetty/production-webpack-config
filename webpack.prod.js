@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 require("dotenv").config({
   path: "./.env.prod",
 });
@@ -55,6 +56,8 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": JSON.stringify(process.env),
     }),
+
+    new BundleAnalyzerPlugin(),
   ],
   mode: "production",
   devtool: "hidden-source-map", // this setting is for production
