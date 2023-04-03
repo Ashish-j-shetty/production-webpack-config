@@ -14,6 +14,8 @@ const Profile = React.lazy(() =>
   }))
 );
 
+const DPRdemo = React.lazy(() => import("./pages/dprDemo"));
+
 function App() {
   console.log(process.env.REACT_APP_API_KEY);
   return (
@@ -27,6 +29,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/about" element={<About />} />
+              <Route path="/dpr" element={<DPRdemo />} />
             </Routes>
           </React.Suspense>
         </div>
