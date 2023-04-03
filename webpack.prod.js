@@ -50,7 +50,7 @@ module.exports = {
     }),
     // to seperate out teh css file from the js bundle
     new MiniCssExtractPlugin({
-      filename: "[name].[hash].css",
+      filename: "[name].[contenthash].css",
       chunkFilename: "[id].css",
     }),
 
