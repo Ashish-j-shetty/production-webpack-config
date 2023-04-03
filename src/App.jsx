@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Form, Route, Routes } from "react-router-dom";
-import { Header } from "./components/header";
-import { Home } from "./components/home";
+import { Header } from "./pages/header";
+import { Home } from "./pages/home";
 
 const About = React.lazy(() =>
-  import("./components/about/index").then((module) => ({
+  import("./pages/about").then((module) => ({
     default: module.About, // this method or use babel plugin babel-plugin-syntax-dynamic-import to import named exports
   }))
 );
 const Profile = React.lazy(() =>
-  import("./components/profile").then((module) => ({
+  import("./pages/profile").then((module) => ({
     default: module.Profile, // this method or use babel plugin babel-plugin-syntax-dynamic-import to import named exports
   }))
 );

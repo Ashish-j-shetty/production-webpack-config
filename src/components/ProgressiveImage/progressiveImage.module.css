@@ -1,0 +1,8 @@
+.loading {
+  filter: blur(10px);
+}
+
+.loaded {
+  filter: blur(0);
+  transition: filter 0.7s linear;
+}
