@@ -26,6 +26,13 @@ eg: `{
 }`
 - have different webpack.config files for production and dev and any other environments
 
+
+**Concepts Implemented**
+- progressive image
+- lazy loading
+- bundle splitting (js)
+- css and js minification 
+
 prod built url :[prod app](https://webpack-production-build.netlify.app/)
 
 dev build url : [dev app](https://webpack-dev-build.netlify.app/)
