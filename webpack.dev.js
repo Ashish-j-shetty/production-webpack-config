@@ -45,7 +45,6 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": JSON.stringify(process.env),
     }),
-    new BundleAnalyzerPlugin(),
   ],
   mode: "development",
   devServer: {
