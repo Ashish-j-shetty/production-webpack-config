@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR /webpackApp
+
+COPY ./package.json .
+
+RUN yarn install
+
+COPY . /webpackApp/
+
+CMD [ "yarn", "start"]
