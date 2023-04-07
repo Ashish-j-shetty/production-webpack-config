@@ -34,6 +34,23 @@ path:  "./.env.prod",
 - css and js minification
 - DPR (Device Pixel Ratio) related changes and updates.
 
+**Docker and nginx setup**
+
+ - docker setup for development
+ - docker setup for producion 
+ - docker compose
+ - nginx to serve bundle 
+ has been added
+ 
+To build the image :
+run `docker build -t imagename currentAppName`
+
+To run container:
+run 	`docker run -p --name newNameofContainer deviceport:containerport imageId|imageName`
+
+example : `docker run --name myapp -p 3000:3000 554934454`
+
+
 prod built url :[prod app](https://webpack-production-build.netlify.app/)
 
 dev build url : [dev app](https://webpack-dev-build.netlify.app/)
